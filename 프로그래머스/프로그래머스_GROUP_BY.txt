@@ -1,4 +1,4 @@
-MYSQL
+-- 프로그래머스 MYSQL GROUP BY 2문제 
 
 -- 고양이와 개는 몇 마리 있을까 (GROUP BY)
 -- https://programmers.co.kr/learn/courses/30/lessons/59040
@@ -14,5 +14,4 @@ WHERE NAME IS NOT NULL
 GROUP BY NAME HAVING COUNT > 1;
 
 
-참고 : 
-https://extbrain.tistory.com/56
+-- 참고 : https://extbrain.tistory.com/56
