@@ -1,0 +1,44 @@
+-- 프로그래머스 SQL 문제풀이
+
+-- 프로그래머스 > SUM,MAX,MIN > 최댓값 구하기
+-- 링크 : https://programmers.co.kr/learn/courses/30/lessons/59415
+-- 코드를 입력하세요, 가장 간단한 풀이
+SELECT MAX(DATETIME) FROM ANIMAL_INS
+
+/* 
+ORDER BY 와 LIMIT를 이용한 풀이
+SELECT DATETIME FROM ANIMAL_INS 
+ORDER BY DATETIME DESC LIMIT 1
+*/
+
+/* TOP을 사용해서 풀어봤는데 Syntax 오류 발생 
+SELECT TOP 1 ANIMAL_ID, DATETIME FROM ANIMAL_INS
+ORDER BY DATETIME DESC 
+*/
+
+/* 
+확인결과 ID값이 클수록 DATETIME 이 늦는 것은 아님
+SELECT ANIMAL_ID, DATETIME FROM ANIMAL_INS 
+ORDER BY ANIMAL_ID DESC
+*/
+
+-- 프로그래머스 > SUM,MAX,MIN > 최솟값 구하기
+-- 링크 : https://programmers.co.kr/learn/courses/30/lessons/59038
+-- 코드를 입력하세요
+SELECT MIN(DATETIME) FROM ANIMAL_INS
+
+
+-- 프로그래머스 > SUM,MAX,MIN > 중복 제거하기
+-- 링크 : https://programmers.co.kr/learn/courses/30/lessons/59408
+-- 코드를 입력하세요
+SELECT COUNT(DISTINCT NAME) FROM ANIMAL_INS
+WHERE NAME IS NOT NULL
+
+-- 프로그래머스 > SUM,MAX,MIN > 동물 수 구하기
+-- 링크 : https://programmers.co.kr/learn/courses/30/lessons/59408
+-- 코드를 입력하세요
+SELECT COUNT(ANIMAL_ID) FROM ANIMAL_INS
+
+
+
+-- 참고 : https://extbrain.tistory.com/56
