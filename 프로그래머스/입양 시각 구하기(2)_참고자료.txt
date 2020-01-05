@@ -1,0 +1,67 @@
+https://codedrive.tistory.com/272
+
+-- 코드를 입력하세요
+SELECT H1.HOUR, IFNULL(H2.COUNT, 0)
+FROM (
+    SELECT 0 as HOUR
+    UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 
+    UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9 UNION SELECT 10
+    UNION SELECT 11 UNION SELECT 12 UNION SELECT 13 UNION SELECT 14 UNION SELECT 15
+    UNION SELECT 15 UNION SELECT 16 UNION SELECT 17 UNION SELECT 18 UNION SELECT 19
+    UNION SELECT 20 UNION SELECT 21 UNION SELECT 22 UNION SELECT 23) H1
+LEFT JOIN (
+    SELECT HOUR(DATETIME) AS 'HOUR', COUNT(*) AS 'count'
+    FROM ANIMAL_OUTS
+    GROUP BY HOUR) as H2 on H1.hour = H2.hour ORDER BY H1.HOUR;
+
+
+https://codingmoonkwa.tistory.com/26
+set @hour := -1;
+SELECT 
+    (@hour := @hour + 1) as 'HOUR',
+    (select count(*) from animal_outs where hour(datetime) = @hour) as 'COUNT'
+from 
+    animal_outs
+where
+    @hour < 23;
+
+# 예제
+
+SELECT H1.HOUR
+FROM (
+    SELECT '위도' as HOUR
+    UNION SELECT '경도'
+    UNION SELECT '고도'
+    UNION SELECT '행정 구역'
+    UNION SELECT '국가'
+    UNION SELECT 'IP 대역' ) H1
+
+SELECT 'Python' AS "프로그래밍 언어"
+UNION SELECT 'C'
+UNION SELECT 'C++'
+UNION SELECT 'JAVA'
+UNION SELECT 'GO'
+UNION SELECT 'C#'
+UNION SELECT 'SWIFT'
+
+
+
+INSERT INTO testtable (subject, content)
+VALUES
+('sub1','con1'),
+('sub2','con2'),
+('sub3','con3');
+
+
+출처: https://private.tistory.com/63 [공부해서 남 주자]
+
+https://www.w3schools.com/sql/
+SQL 공부사이트
+
+# 참고문헌 
+대입연산자, 비교연산자
+- http://tcpschool.com/mysql/mysql_operator_assignment
+SET 이외의 명령줄에서는 =이 비교연산자로 인식됨
+따라서 SELECT 문에서는 :=를 사용해야 함
+https://three-pleasure.tistory.com/256
+
