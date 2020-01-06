@@ -1,0 +1,18 @@
+-- 프로그래머스 SQL 문제풀이
+
+-- 1
+-- 프로그래머스 > String, Date > 루시와 엘라 찾기 
+-- 링크 : https://programmers.co.kr/learn/courses/30/lessons/59046
+-- 코드를 입력하세요
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS INS
+WHERE INS.NAME = 'LUCY' OR INS.NAME = 'ELLA' OR INS.NAME = 'PICKLE' 
+OR INS.NAME = 'ROGAN' OR INS.NAME = 'SABRINA' OR INS.NAME = 'MITTY'
+ORDER BY INS.ANIMAL_ID ASC
+
+-- 2(IN 연산자 사용)
+-- 프로그래머스 > String, Date > 루시와 엘라 찾기 
+-- 링크 : https://programmers.co.kr/learn/courses/30/lessons/59046
+-- 코드를 입력하세요
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS INS
+WHERE INS.NAME IN ('LUCY','ELLA','PICKLE','ROGAN','SABRINA','MITTY')
+ORDER BY INS.ANIMAL_ID ASC
