@@ -1,0 +1,21 @@
+-- 프로그래머스 SQL 문제풀이
+
+-- 풀이 1, CASE 활용
+-- 프로그래머스 > String, Date > 중성화 여부 파악하기
+-- 링크 : https://programmers.co.kr/learn/courses/30/lessons/59409
+-- 코드를 입력하세요
+SELECT ANIMAL_ID, NAME,
+CASE WHEN (SEX_UPON_INTAKE LIKE '%NEUTERED%' OR SEX_UPON_INTAKE LIKE '%SPAYED%') THEN 'O' ELSE 'X' END AS '중성화'
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID ASC
+
+-- 풀이 2, IF 활용
+-- 코드를 입력하세요
+SELECT ANIMAL_ID, NAME,
+IF(SEX_UPON_INTAKE LIKE '%NEUTERED%' OR SEX_UPON_INTAKE LIKE '%SPAYED%','O','X') AS '중성화'
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID ASC
+
+참고 :
+1. https://tudiiii.github.io/sql1/
+2. https://tudiiii.github.io/sql_pr5/
